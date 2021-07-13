@@ -36,9 +36,8 @@ namespace UploadImage
 
         private async void EnviarInfo_Clicked(object sender, EventArgs e)
         {
-            
-         
             await CrossMedia.Current.Initialize();
+
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported )
             {
