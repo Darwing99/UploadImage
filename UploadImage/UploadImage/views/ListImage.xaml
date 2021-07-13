@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:viewModel="clr-namespace:UploadImage.modelview"
+             x:Class="UploadImage.views.ListImage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView  RowHeight="200" Margin="10"   x:Name="collectionView" HorizontalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding id}" TextColor="Black" FontSize="Medium"></Label>
+                                <Image Source="{Binding image, Converter={StaticResource bisc}}" ></Image>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
