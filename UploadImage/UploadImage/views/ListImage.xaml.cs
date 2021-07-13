@@ -13,7 +13,7 @@ namespace UploadImage.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListImage : ContentPage
     {
-        List<Imagen> region;
+       
         List<Imagen> service;
         RestService restService;
         public ListImage()

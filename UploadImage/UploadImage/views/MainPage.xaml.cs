@@ -36,30 +36,21 @@ namespace UploadImage
 
         private async void EnviarInfo_Clicked(object sender, EventArgs e)
         {
-            await CrossMedia.Current.Initialize();
+            var camera = new StoreCameraMediaOptions();
+            camera.PhotoSize = PhotoSize.Full;
+            camera.Name = "img";
+            camera.Directory = "MiApp";
+            
+
+            var foto = await CrossMedia.Current.TakePhotoAsync(camera);
 
 
-            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported )
+            if (foto != null)
             {
-                await DisplayAlert("No Camera", ":( No camera available.", "OK");
-                return;
-            }
-            var camera = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-            {
-                PhotoSize = PhotoSize.Full,
-                Name = "img",
-                Directory = "MiApp",
-                DefaultCamera= Plugin.Media.Abstractions.CameraDevice.Front
-               
-            });
-
-
-            if (camera != null)
-            {
-             
+                
                 image.Source = ImageSource.FromStream(() => {
 
-                    return camera.GetStream();
+                    return foto.GetStream();
 
 
 
@@ -67,16 +58,14 @@ namespace UploadImage
                 using (MemoryStream memory = new MemoryStream())
                 {
 
-                    Stream stream = camera.GetStream();
+                    Stream stream = foto.GetStream();
                     stream.CopyTo(memory);
                     imageArray = memory.ToArray();
                 }
             }
-            if (camera == null)
-                return;
-            var compartirfoto = camera.Path;
-          
-          
+            var compartirfoto = foto.Path;
+
+
             Guardar.IsEnabled = true;
 
         }
