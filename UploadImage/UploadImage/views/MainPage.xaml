@@ -24,9 +24,9 @@
             <Frame Padding="10" Visual="Material" CornerRadius="10" HasShadow="True">
                 <Grid HorizontalOptions="CenterAndExpand">
                     <StackLayout Orientation="Horizontal" Margin="10,10,10,10">
-                        <Button Visual="Material" BackgroundColor="Black"  x:Name="enviarInfo" Padding="10,10,10,10"  Text="Tomar Foto"></Button>
+                        <Button Visual="Material" TextColor="White" BackgroundColor="Black"  x:Name="enviarInfo" Padding="10,10,10,10"  Text="Tomar Foto"></Button>
 
-                        <Button  Grid.Row="0" Grid.Column="0" Text="Guardar ApiRest" BackgroundColor="Black" x:Name="Guardar" IsEnabled="False" Clicked="guardar_Clicked" ></Button>
+                        <Button  Grid.Row="0" Grid.Column="0" TextColor="White" Text="Guardar ApiRest" BackgroundColor="Black" x:Name="Guardar" IsEnabled="False" Clicked="guardar_Clicked" ></Button>
                    
 
                     </StackLayout>
