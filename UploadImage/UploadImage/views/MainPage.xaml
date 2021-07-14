@@ -24,10 +24,10 @@
             <Frame Padding="10" Visual="Material" CornerRadius="10" HasShadow="True">
                 <Grid HorizontalOptions="CenterAndExpand">
                     <StackLayout Orientation="Horizontal" Margin="10,10,10,10">
-                        <Button Visual="Material" BackgroundColor="ForestGreen"  x:Name="enviarInfo" Padding="10,10,10,10"  Text="Tomar Foto"></Button>
-                        
-                        <Button  Grid.Row="0" Grid.Column="0" Text="Guardar ApiRest" x:Name="Guardar" IsEnabled="False" Clicked="guardar_Clicked" ></Button>
-                        <Button Visual="Material" BackgroundColor="ForestGreen"  x:Name="lista" Padding="10,10,10,10" Clicked="ToolbarItem_Clicked"  Text="Lista"></Button>
+                        <Button Visual="Material" BackgroundColor="Black"  x:Name="enviarInfo" Padding="10,10,10,10"  Text="Tomar Foto"></Button>
+
+                        <Button  Grid.Row="0" Grid.Column="0" Text="Guardar ApiRest" BackgroundColor="Black" x:Name="Guardar" IsEnabled="False" Clicked="guardar_Clicked" ></Button>
+                   
 
                     </StackLayout>
                 </Grid>
