@@ -20,13 +20,28 @@ namespace UploadImage.views
         {
             InitializeComponent();
             restService = new RestService();
+            collectionView.IsRefreshing = true;
+         
+
         }
         protected async override void OnAppearing()
         {
-
+            
             base.OnAppearing();
+
             service = await restService.GetRepositoriesAsync(DataConstants.urlGet);
-            collectionView.ItemsSource = service;
+            if (service == null)
+            {
+                collectionView.IsRefreshing = true;
+                return;
+            }
+            else
+            {
+                collectionView.IsRefreshing = false;
+                collectionView.ItemsSource = service;
+            }
+           
+
           
         }
 

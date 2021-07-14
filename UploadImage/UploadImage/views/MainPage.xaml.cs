@@ -70,13 +70,7 @@ namespace UploadImage
 
         }
 
-        protected async override void OnAppearing()
-        {
-
-            base.OnAppearing();
-            service = await restService.GetRepositoriesAsync(DataConstants.urlGet);
-            var datos = service;
-        }
+     
 
         private async void guardar_Clicked(object sender, EventArgs e)
         {
